@@ -1,0 +1,26 @@
+<form role="form">
+    <fieldset class="col-sm-12">
+        <legend>Recent Invoices</legend>
+        <div class="row">
+            <div class="col-sm-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Invoice Date</th>
+                        <th>Invoice Amount</th>
+                        <th>Invoice Due</th>
+                    </tr>
+
+                    {% for invoice in invoices %}
+                    <tr>
+                        <td>{{ invoice.invoice_num }}</td>
+                        <td>{{ invoice.invoice_date }}</td>
+                        <td>{{ invoice.invoice_amt }}</td>
+                        <td>{{ invoice.due_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </fieldset>
+</form>

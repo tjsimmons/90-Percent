@@ -1,0 +1,91 @@
+<form class="form-horizontal" role="form">
+    <fieldset class="col-sm-12">
+        <legend>Premise {{ forloop.counter }} Details</legend> {# this is only included in a for loop, so we can use the counter #}
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Premnum</label>
+            <div class="col-sm-1">
+                <p class="form-control-static">{{ premise.premnum }}</p>
+            </div>
+            <label class="col-sm-1 control-label">Status</label>
+            <div class="col-sm-1">
+                <p class="form-control-static">{{ premise.status }}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Start Date</label>
+            <div class="col-sm-1">
+                <p class="form-control-static">{{ premise.start_date }}</p>
+            </div>
+            <label class="col-sm-1 control-label">End Date</label>
+            <div class="col-sm-1">
+                <p class="form-control-static">{{ premise.end_date|default_if_none:"" }}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Address Details</label>
+
+            <div class="col-sm-6">
+                <table class="table table-striped">
+                    <tr>
+                        <th>House #</th>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip</th>
+                    </tr>
+                    <tr>
+                        <td>{{ premise.address.street_number }}</td>
+                        <td>{{ premise.address.street_name.strip }}</td>
+                        <td>{{ premise.address.city.strip }}</td>
+                        <td>{{ premise.address.state.strip }}</td>
+                        <td>{{ premise.address.postal.strip }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Rate Details</label>
+
+            <div class="col-sm-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Offer Code</th>
+                        <th>Rate</th>
+                        <th>Effective From</th>
+                        <th>Effective To</th>
+                    </tr>
+                    <tr>
+                        <td>{{ premise.rate.offer }}</td>
+                        <td>{{ premise.rate.rate }}</td>
+                        <td>{{ premise.rate.effective_from }}</td>
+                        <td>{{ premise.rate.effective_to|default_if_none:"" }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Reading Details</label>
+
+            <div class="col-sm-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Reading</th>
+                        <th>Read Date</th>
+                        <th>Read Method</th>
+                        <th>Invoice #</th>
+                    </tr>
+                    <tr>
+                        <td>{{ premise.reading.reading }}</td>
+                        <td>{{ premise.reading.read_date }}</td>
+                        <td>{{ premise.reading.read_method }}</td>
+                        <td>{{ premise.reading.invoice_num }}</td>
+                    </tr>
+                </table>
+
+            </div>
+    </fieldset>
+</form>

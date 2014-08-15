@@ -1,0 +1,36 @@
+<form role="form">
+    <fieldset class="col-sm-12">
+        <legend>Recent PTJs</legend>
+        <div class="row">
+            <div class="col-sm-9">
+                <table class="table table-striped">
+                    <tr>
+                        <th>PTJ #</th>
+                        <th>Debtor</th>
+                        <th>Premise</th>
+                        <th>Type Code</th>
+                        <th>Class Code</th>
+                        <th>Subclass Code</th>
+                        <th>Status Code</th>
+                        <th>Date Logged</th>
+                        <th>Date Status</th>
+                    </tr>
+
+                    {% for ptj in ptjs %}
+                    <tr>
+                        <td>{{ ptj.ptj_number }}</td>
+                        <td>{{ ptj.debtor.debtornum }}</td>
+                        <td>{{ ptj.premise.premnum }}</td>
+                        <td>{{ ptj.type_code }}</td>
+                        <td>{{ ptj.class_code }}</td>
+                        <td>{{ ptj.subclass_code }}</td>
+                        <td>{{ ptj.status_code }}</td>
+                        <td>{{ ptj.date_logged }}</td>
+                        <td>{{ ptj.date_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src='{% static "details/js/jquery-1.11.1.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "details/js/bootstrap.min.js" %}'></script>
+    <link rel="stylesheet" href='{% static "details/css/bootstrap.css" %}'>
+
+    {% block extrajs %}
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">90% Screen Demo</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                 <form class="navbar-form navbar-left" role="search" action="/search/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="debtornum" placeholder="Debtor Number">
+                    </div>
+                     <button type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+    {% block main %}
+    {% endblock %}
+    </div>
+</body>

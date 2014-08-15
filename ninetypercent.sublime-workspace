@@ -1,0 +1,995 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"premi",
+				"premise_service	(local, instance)"
+			],
+			[
+				"call",
+				"call_soap	(global, function)"
+			],
+			[
+				"field",
+				"field_iter	(local, instance)"
+			],
+			[
+				"am",
+				"amount_unpaid	(attribute, instance)"
+			],
+			[
+				"rep",
+				"report_size	(global, instance)"
+			],
+			[
+				"charge",
+				"charge_object	(global, instance)"
+			],
+			[
+				"For",
+				"ForeignKey"
+			],
+			[
+				"rate",
+				"rate_query	(local, instance)"
+			],
+			[
+				"eff",
+				"effective_to	(attribute, instance)"
+			],
+			[
+				"data",
+				"database_type	(local, instance)"
+			],
+			[
+				"Http",
+				"HttpResponseRedirect	(imported, instance)"
+			],
+			[
+				"csv",
+				"csvreader	(local, instance)"
+			],
+			[
+				"master",
+				"masterlist	(local, instance)"
+			],
+			[
+				"detail",
+				"detail_fields"
+			],
+			[
+				"invoice",
+				"invoice_fields	(local, instance)"
+			],
+			[
+				"current",
+				"current_finum	(local, instance)"
+			],
+			[
+				"get",
+				"get_greatest_common_divisor(num1, num2)	(global, function)"
+			],
+			[
+				"extr",
+				"extract_type	(local, instance)"
+			],
+			[
+				"row",
+				"row_count	(local, instance)"
+			],
+			[
+				"desc",
+				"descr_cursor	(local, instance)"
+			],
+			[
+				"insert",
+				"insert_only=	(parameter_keyword, instance)"
+			],
+			[
+				"pk",
+				"pkfile	(local, instance)"
+			],
+			[
+				"col",
+				"col_list	(local, instance)"
+			],
+			[
+				"COLU",
+				"COLUMN_NAME	(local, instance)"
+			],
+			[
+				"colum",
+				"column_types	(local, instance)"
+			],
+			[
+				"max",
+				"max_length	(local, instance)"
+			],
+			[
+				"exec",
+				"exec_sql	(local, instance)"
+			],
+			[
+				"prod",
+				"products	(global, instance)"
+			],
+			[
+				"square",
+				"square_chains	(global, instance)"
+			],
+			[
+				"res",
+				"res_89	(global, instance)"
+			],
+			[
+				"co",
+				"current_position	(global, instance)"
+			],
+			[
+				"sp",
+				"split_line	(global, instance)"
+			],
+			[
+				"combinations",
+				"combinations_with_replacement  (class)"
+			],
+			[
+				"perm",
+				"permutations	(imported, instance)"
+			],
+			[
+				"incenti",
+				"incentive_tariff_map"
+			],
+			[
+				"ince",
+				"incentive_tariff_map"
+			],
+			[
+				"amou",
+				"amount_saved	(attribute, instance)"
+			],
+			[
+				"day",
+				"day_of_month_due	(local, instance)"
+			],
+			[
+				"amount",
+				"amount_due	(attribute, instance)"
+			],
+			[
+				"DUE",
+				"DUE_DATE"
+			],
+			[
+				"fa",
+				"factorial  (function)"
+			],
+			[
+				"min",
+				"min_length"
+			],
+			[
+				"EFA",
+				"EFAEPN005"
+			],
+			[
+				"start",
+				"start_at"
+			],
+			[
+				"MORT",
+				"MORTGAGE_AMOUNT_DUE"
+			],
+			[
+				"car",
+				"car_paid"
+			],
+			[
+				"mort",
+				"mortgage_paid"
+			],
+			[
+				"CAR",
+				"CAR_AMOUNT_DUE"
+			],
+			[
+				"mor",
+				"mortgage_save"
+			],
+			[
+				"to",
+				"to_save"
+			],
+			[
+				"curren",
+				"current_day"
+			],
+			[
+				"cur",
+				"current_day"
+			],
+			[
+				"index",
+				"index_line"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/tsimmons2/Documents/Misc/asdf.txt",
+			"settings":
+			{
+				"buffer_size": 449,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"base",
+				"Bookmarks: Select All"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"unix",
+				"Line Ending: Unix"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"package control",
+				"Package Control: Remove Package"
+			],
+			[
+				"convert",
+				"Indentation: Convert to all views on window to Spaces"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"rope",
+				"Rope Refactoring: Restructure"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"br",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"brow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"MARKD",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"dis",
+				"Package Control: Discover Packages"
+			],
+			[
+				"convert to sp",
+				"Indentation: Convert to Spaces"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/crawl_manual.txt",
+		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/DCSS Guide.txt",
+		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/quickstart.txt",
+		"/C/Users/tsimmons2/Documents/Programs/stone_soup-0.13/README.txt",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/models.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/settings.py",
+		"/C/Users/tsimmons2/Documents/workspace/branches/DEPETXDNPP/perl/DNP_process.pl",
+		"/C/Users/tsimmons2/Downloads/OBILogQA.txt",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/utilities.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/details.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/base.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/classes.py",
+		"/C/Users/tsimmons2/Desktop/test.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/views.py",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/mod_wsgi_make_error.txt",
+		"/C/Users/tsimmons2/Desktop/example_2.txt",
+		"/C/Users/tsimmons2/Desktop/example_1.txt",
+		"/C/Users/tsimmons2/Desktop/example_3.txt",
+		"/C/Users/tsimmons2/Desktop/810/20140723202942982_FCP_TX_105262336_810.txt.20140723190837.136537912.810",
+		"/C/Users/tsimmons2/Desktop/810/20140714121945521_FCP_TX_105262336_810.txt.20140714111139.135901609.810",
+		"/C/Users/tsimmons2/Desktop/810/20140703181954101_FCP_TX_105262336_810.txt.20140703170858.135328469.810",
+		"/C/Users/tsimmons2/Documents/workspace/branches/datazaps/sql/TPC_EPP_Premstop_ADD.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/datazaps/sql/TPC_CleanupDupMeter.sql",
+		"/C/Users/tsimmons2/Desktop/membership_pricing_updates.sql",
+		"/C/Python27/Lib/site-packages/suds/sudsobject.py",
+		"/C/Users/tsimmons2/Desktop/lopez2.sql",
+		"/C/Users/tsimmons2/Dropbox/Work/sac04_running.txt",
+		"/C/Users/tsimmons2/Desktop/check_sac04.py",
+		"/C/Users/tsimmons2/Dropbox/Work/sac04_results.csv",
+		"/C/Users/tsimmons2/Dropbox/sac04_results - Copy.tmp",
+		"/C/Users/tsimmons2/Desktop/asdf.py",
+		"/C/Users/tsimmons2/Desktop/foo.py",
+		"/C/Users/tsimmons2/Desktop/check.bat",
+		"/C/Users/tsimmons2/Documents/workspace/branches/ACQ_ENGINE_CIS_PACKAGE/sql/Pkg_Acq_Engine.bdy",
+		"/C/Users/tsimmons2/Desktop/lopez1.sql",
+		"/C/Users/tsimmons2/Desktop/foo.html",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/source.txt",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/source2.txt",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/premise.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/misc.html",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/add_ptj_no_column_memb_accounts sql.log",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/add_ptj_no_memb_accounts sql.log",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/Pkg_Membership_Buyin spc.log",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/Pkg_Membership_Buyin bdy.log",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/log_saves_noncom_onetime sql.log",
+		"/C/Users/tsimmons2/Desktop/Norman/scripts/extract_tables.py",
+		"/C/Users/tsimmons2/Documents/workspace/branches/ACQ_ENGINE_CIS_PACKAGE/sql/create_toaf_tmp.sql",
+		"/C/Users/tsimmons2/Documents/Misc/asdf.txt",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/invoices.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/debtor.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/ptj.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/invoice.html",
+		"/C/Users/tsimmons2/Documents/workspace/branches/TOAF_Missing/shell/get_missing_toaf.sh",
+		"/C/Users/tsimmons2/Documents/workspace/branches/TOAF_Missing/sql/query.sql",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/static/details/css/bootstrap.css",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/premises.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/urls.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/urls.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/wsgi.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/manage.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/admin.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/tests.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/__init__.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/__init__.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/index.html",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/static/details/css/bootstrap-theme.css",
+		"/C/Users/tsimmons2/Downloads/bootstrap-3.2.0/bootstrap-3.2.0/bower.json",
+		"/C/Users/tsimmons2/Downloads/bootstrap-3.2.0/bootstrap-3.2.0/composer.json",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/static/details/css/bootswatch.less",
+		"/C/Users/tsimmons2/Downloads/bootstrap-3.2.0/bootstrap-3.2.0/package.json",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/static/details/css/bootstrap.min.css",
+		"/C/Users/tsimmons2/Documents/workspace/branches/MembershipBuyin/sql/execute_package.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/MembershipBuyin/shell/run_membership_package.sh",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/search.html",
+		"/C/Users/tsimmons2/Documents/Projects/Historical Tool/Extract Data/process.py",
+		"/C/Users/tsimmons2/Documents/Projects/Historical Tool/create_tables.sql",
+		"/C/Users/tsimmons2/Desktop/Norman ISTA/scripts/process.py",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/energy_onsite/sripts/create_toaf_config.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/xtdb/procedures/r1504_validate_toaf_days_exception.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/xtdb/procedures/r1503_validate_toaf_days.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/xtdb/procedures/toaf_grants.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/xtdb/procedures/c1503_process_toaf_nr.sql",
+		"/C/Users/tsimmons2/Desktop/Norman ISTA/data/staging/ts_customertype.csv",
+		"/C/Users/tsimmons2/Desktop/Norman ISTA/data/staging/ts_ldclookup.csv",
+		"/C/Users/tsimmons2/Desktop/techstack.md",
+		"/U/pc05888-details.csv",
+		"/U/pc05498-details.csv",
+		"/U/pc05883-details.csv",
+		"/C/Users/tsimmons2/Documents/Projects/ISTA/Local SQL Table Load/bulk_export.py",
+		"/C/Users/tsimmons2/Desktop/Norman/sql/Address.sql",
+		"/C/Users/tsimmons2/Desktop/Norman/sql/asdf.sql",
+		"/C/Users/tsimmons2/Desktop/Norman/scripts/extract_invoices.py",
+		"/C/Users/tsimmons2/Desktop/foo.php",
+		"/C/php/install.txt",
+		"/C/Users/tsimmons2/Downloads/php-5.5.10-Win32-VC11-x86/readme-redist-bins.txt",
+		"/C/Users/tsimmons2/Desktop/Tech Stack/extract.csv",
+		"/C/Users/tsimmons2/Desktop/Tech Stack/extract-0.csv",
+		"/C/Users/tsimmons2/Dropbox/Documents/DE_pw.txt",
+		"/G/FCP Invoices Only/read_index_and_extract.py",
+		"/C/Users/tsimmons2/Desktop/ReprocessRecords.txt",
+		"/C/tj/details.csv",
+		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/Good_Will_Credit_InboundFile_20140204 csv.20140204180929",
+		"/C/Users/tsimmons2/Desktop/PKG_LOYALTY_CREDIT.pck",
+		"/C/Users/tsimmons2/Desktop/working.md",
+		"/C/tj/custs/extract.csv",
+		"/C/Users/tsimmons2/Dropbox/Code/Split File/package.py",
+		"/C/Users/tsimmons2/Dropbox/Code/Split File/split_file.py",
+		"/C/Users/tsimmons2/Dropbox/Code/Direct Energy/split_files.py",
+		"/C/Users/tsimmons2/Documents/workspace/branches/EXPOS/EXPOS/Web.config",
+		"/C/Users/tsimmons2/Desktop/toaf.txt",
+		"/C/Users/tsimmons2/Desktop/add_contract_detail.txt",
+		"/C/Program Files/FourJs/cliwtk/Release/RELEASE.TXT",
+		"/C/Users/tsimmons2/Desktop/jmeter/jakarta-jmeter_8.08/bin/jmeter.properties",
+		"/C/Users/tsimmons2/Downloads/theimmortalbum@gmail.com.ical/T.J. Simmons_theimmortalbum@gmail.com.ics",
+		"/C/Users/tsimmons2/Desktop/jmeter/jakarta-jmeter_8.08/bin/jmeter.log",
+		"/C/Users/tsimmons2/Desktop/jmeter/jakarta-jmeter_8.08/bin/jmeter - Copy.properties",
+		"/C/Users/tsimmons2/Documents/Programs/apache-jmeter-2.10/bin/jmeter.properties",
+		"/U/jmeter.properties",
+		"/C/Users/tsimmons2/Documents/workspace/branches/sql/sql/xtdb/procedures/C1102_PROCESS_OCCUPIED_PREMISE.sql",
+		"/U/jmeter/jakarta-jmeter_8.08/bin/jmeter.bat",
+		"/C/Users/tsimmons2/Downloads/openrecovery-twrp-2.6.3.3-g2att/tmp/loki.sh",
+		"/C/Users/tsimmons2/Desktop/perftest.txt",
+		"/C/Users/tsimmons2/Documents/Projects/Misc/add_postal_zones.sql",
+		"/C/Users/tsimmons2/Desktop/update_postal_zone.sql",
+		"/C/Oracle/product/11.2.0/client_1/network/admin/tnsnames.ora",
+		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/models.py",
+		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/utilities.py",
+		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/views.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"WARN",
+			"twelve_calendar_days",
+			"12",
+			"991407230744",
+			"991407140446",
+			"991407030912",
+			"\n",
+			"' w",
+			" wh",
+			"'",
+			", ",
+			"bindings",
+			"bi",
+			"Bi",
+			"bi",
+			"field_iter",
+			"field_name",
+			"\"",
+			"foo",
+			"fooman",
+			"FooMAN",
+			"Array",
+			"rate",
+			"charge.",
+			"i ",
+			"._",
+			"self.",
+			"foo",
+			"}",
+			"{",
+			"get_recent_invoices",
+			"th",
+			"-lg-",
+			"</td>",
+			"<td>",
+			"</th>",
+			"<th>",
+			"rate.",
+			"get_rates",
+			"print",
+			"legend",
+			"col-lg",
+			"h2",
+			"redirect",
+			"debtor",
+			"search",
+			"border-radius: 4px",
+			"@media",
+			"navbar",
+			"navar",
+			"border-radius",
+			"tr",
+			"data.",
+			"get_recent_invoices",
+			"get_premises",
+			"get_rates",
+			"update_debtor_details",
+			"invoices",
+			"print",
+			"rate_row",
+			"db_cursor2",
+			"db_connect2",
+			"update_query",
+			"“",
+			"”",
+			"\n",
+			"UID:",
+			"UID",
+			"/j_security_check",
+			"error",
+			"SSLE",
+			"SSLExc",
+			"SSL",
+			"FATAL",
+			"SSLEx",
+			"ssl",
+			"SSL",
+			"ssl",
+			", ",
+			"public CONTRACT_DETAIL AddContractDetail(",
+			"        ",
+			"\n",
+			"\"",
+			"tdpcup11",
+			"\"",
+			", request",
+			"Base",
+			"-  ",
+			"  ",
+			"&gt;",
+			"&lt;",
+			".c",
+			"-lg",
+			"span4",
+			"product",
+			"template",
+			"1   ",
+			"@@",
+			"@@@@@@",
+			"@@@",
+			"@@",
+			"@@G@@Failure@@",
+			"228'",
+			"228",
+			"\n",
+			"'",
+			"\n",
+			"'",
+			"agent",
+			"Debtor",
+			"TDSP",
+			"<?",
+			"\n",
+			",",
+			"\n",
+			",",
+			".00",
+			"DERNovember",
+			"DERNov",
+			"invdetid",
+			"INVDETID",
+			"invdetid",
+			"outdict",
+			"row_query",
+			"tc",
+			"reserved",
+			"create",
+			"reserved"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"UID:0",
+			"",
+			"','",
+			"',",
+			"",
+			"Norman",
+			"'",
+			"\"",
+			"&",
+			">",
+			"<",
+			"",
+			"\\\\",
+			", ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/tsimmons2/Documents/Misc/asdf.txt",
+					"settings":
+					{
+						"buffer_size": 449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 354.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"set",
+				"ninetypercent/ninetypercent/settings.py"
+			],
+			[
+				"model",
+				"ninetypercent/details/models.py"
+			],
+			[
+				"views",
+				"ninetypercent/details/views.py"
+			],
+			[
+				"settings",
+				"ninetypercent/ninetypercent/settings.py"
+			],
+			[
+				"base",
+				"ninetypercent/details/templates/base.html"
+			],
+			[
+				"detail",
+				"ninetypercent/details/templates/details.html"
+			],
+			[
+				"util",
+				"ninetypercent/details/utilities.py"
+			],
+			[
+				"prem",
+				"ninetypercent/details/templates/premise.html"
+			],
+			[
+				"inv",
+				"ninetypercent/details/templates/invoices.html"
+			],
+			[
+				"debtor",
+				"ninetypercent/details/templates/debtor.html"
+			],
+			[
+				"bootst",
+				"ninetypercent/details/static/details/css/bootstrap.css"
+			],
+			[
+				"premise",
+				"ninetypercent/details/templates/premise.html"
+			],
+			[
+				"urls",
+				"ninetypercent/details/urls.py"
+			],
+			[
+				"bootstra",
+				"ninetypercent/details/static/details/css/bootstrap.css"
+			],
+			[
+				"bootstra.c",
+				"ninetypercent/details/static/details/css/bootstrap.css"
+			],
+			[
+				"bootstrap-",
+				"ninetypercent/details/static/details/css/bootstrap-theme.css"
+			],
+			[
+				"bootstrap.",
+				"ninetypercent/details/static/details/css/bootstrap.css"
+			],
+			[
+				"boot",
+				"ninetypercent/details/static/details/css/bootswatch.less"
+			],
+			[
+				"details",
+				"ninetypercent/details/templates/details.html"
+			],
+			[
+				"models",
+				"ninetypercent/details/models.py"
+			],
+			[
+				"searc",
+				"ninetypercent/details/templates/search.html"
+			],
+			[
+				"search",
+				"ninetypercent/details/templates/search.html"
+			],
+			[
+				"maths",
+				"maths.py"
+			],
+			[
+				"prob145",
+				"prob145.py"
+			],
+			[
+				"prob18",
+				"prob18.py"
+			],
+			[
+				"prob92",
+				"prob92.py"
+			],
+			[
+				"prob81",
+				"prob81_test.txt"
+			],
+			[
+				"prob41",
+				"prob41.py"
+			],
+			[
+				"prob20",
+				"prob206.py"
+			],
+			[
+				"prob206",
+				"prob206.py"
+			],
+			[
+				"foo",
+				"foo.py"
+			],
+			[
+				"prob63",
+				"prob63.py"
+			],
+			[
+				"prob79.p",
+				"prob79.py"
+			],
+			[
+				"pro23",
+				"prob23.py"
+			],
+			[
+				"prob19",
+				"prob19.py"
+			],
+			[
+				"11",
+				"spoj11.c"
+			],
+			[
+				"soj42",
+				"spoj42.py"
+			],
+			[
+				"spoj1",
+				"spoj1.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

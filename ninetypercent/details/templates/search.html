@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block extrajs %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#submit").click(function(e) {
+        $("#search").attr("action", "/details/search/" + $("#debtor").val() + "/");
+        $("#search").submit();
+    });
+});
+</script>
+{% endblock %}
+
+{% block main %}
+<form name="search" action="/details/search/" method="post" id="search">
+    {% csrf_token %}
+    <input name="debtor" id="debtor">
+    <button type="submit" id="submit">Search</button>
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{# this bit will hold last invoice, payment, usage, etc #}
+<form class="form-horizontal" role="form">
+    <fieldset class="col-sm-12">
+        <legend>Misc. Details</legend>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Latest Invoice</label>
+            <div class="col-sm-4">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Invoice Date</th>
+                        <th>Invoice Amount</th>
+                        <th>Invoice Due</th>
+                    </tr>
+                    <tr>
+                        <td>{{ invoice.invoice_num }}</td>
+                        <td>{{ invoice.invoice_date }}</td>
+                        <td>{{ invoice.invoice_amt }}</td>
+                        <td>{{ invoice.due_date }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label">Latest Payment</label>
+            <div class="col-sm-3">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Date Received</th>
+                        <th>Amount</th>
+                        <th>Channel</th>
+                    </tr>
+                    <tr>
+                        <td>{{ payment.date_received }}</td>
+                        <td>{{ payment.payment_amt }}</td>
+                        <td>{{ payment.channel }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <label class="col-sm-1 control-label">Latest SO</label>
+        </div>-->
+    </fieldset>
+</form>
