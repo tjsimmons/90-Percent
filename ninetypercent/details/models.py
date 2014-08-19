@@ -46,6 +46,9 @@ class Debtor(Common):
     on_ebill = models.CharField(max_length=1)
     phone_number = models.CharField(max_length=12, null=True)
     email_address = models.CharField(max_length=50, null=True)
+    aav = models.CharField(max_length=4, null=True)
+    current_balance = models.DecimalField(max_digits=10, decimal_places=4, null=True)
+    overdue_balance = models.DecimalField(max_digits=10, decimal_places=4, null=True)
 
     def get_absolute_url(self):
         return "/details/%s/" % self.debtornum
@@ -211,3 +214,6 @@ class Reading(Common):
                                                             '31-DEC-2999')
               WHERE  pec.debtornum = {0}
                      AND pec.premnum = {1}) where reading_rank = 1""".format(debtornum, premnum)
+
+class Noncommodity(Common):
+  pass

@@ -1,0 +1,4 @@
+Django==1.6.5
+South==1.0
+requests==2.2.1
+suds-jurko==0.6

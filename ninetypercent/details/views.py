@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from utilities import get_details
 from models import Debtor, Invoice, Premise, Payment
 
+from peace_webservices import call_soap
+
 def details(request, debtornum):
     debtor = Debtor.objects.get(debtornum__exact=debtornum)
     premises = Premise.objects.filter(debtor=debtor).order_by("-start_date")
@@ -12,6 +14,7 @@ def details(request, debtornum):
     return render(request, 'details.html', {"debtor": debtor, "premises": premises, "invoice": invoice, "payment": payment})
 
 def home(request):
+    #call_soap()
     return render(request, 'base.html')
 
 def search(request):

@@ -1,0 +1,35 @@
+from datetime import datetime
+
+from models import Debtor, Premise, Rate, Address, Invoice, PTJ, Payment, Reading
+
+def get_details(debtornum):
+    connection = get_database_connection()
+
+    try:
+        debtor = Debtor.objects.get(debtornum__exact=debtornum)
+        created = False
+    except Debtor.DoesNotExist:
+        debtor = Debtor(debtornum=debtornum)
+        created = True
+
+    if created or (datetime.now() - debtor.last_modified).days > 0:
+        # been more than a day since we updated, let's update the info, or a new debtor
+        #get_debtor_details(debtor, connection)
+        pass
+
+    get_debtor_details(debtor, connection)
+
+    # get our premises for the debtor
+    get_premises(debtor, connection)
+
+    # get our invoices for the debtor
+    get_last_invoice(debtor, connection)
+
+    get_last_payment(debtor, connection)
+
+    # and PTJs, maybe???
+    #get_recent_ptjs(debtor, connection)
+
+    close_database_connection(connection)
+
+    return debtor

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"addres",
+				"address_info	(local, instance)"
+			],
+			[
+				"suds",
+				"sudsobject	(imported, instance)"
+			],
+			[
 				"premi",
 				"premise_service	(local, instance)"
 			],
@@ -226,6 +234,59 @@
 				"buffer_size": 449,
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"contents": "680240280\n680241205\n680242104\n680242336\n680243441\n680245370\n680246337\n680253077\n650096563\n680254927\n680254968\n680255049\n680255122\n680255148\n653596601\n680255312\n3589999\n1198150\n680255627\n",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Windows",
+				"name": "680240280"
+			}
+		},
+		{
+			"contents": "class GenericResult(object):\n    \"\"\"\n    Must set _bindings in subclass. It's how the set_attributes method knows to get the values from the SOAP object.\n    Do note that the items must be entered into the tuple IN ORDER, so we can properly generate the field{num} values.\n    It's a tuple because tuples are immutable.\n\n    Type must be set either to Custom or Peace\n    \"\"\"\n\n    _bindings = ()\n    _type = None\n\n    def __init__(self, **kwargs):\n        self._set_attributes(**kwargs)\n\n    def _set_attributes(self, **kwargs):\n        # set up the generic values for custom webservices\n        if self._type == \"Custom\":\n            soap_name = 'field{num}'\n            num = 1\n\n        for field in self._bindings:\n            if self._type == \"Custom\":\n                setattr(self, field, kwargs[soap_name.format(num=num)])\n\n                num += 1\n            elif self._type == \"Peace\":\n                setattr(self, field, kwargs[field])\n\n    def __repr__(self):\n        fields = filter(lambda x: x[:1] != '_', dir(self))\n\n        # ugly, but it returns a string representing the object and it's values\n        return '\\n'.join(f for f in map(lambda x: '%s = %s' % (x[0], x[1]), ((field, getattr(self, field)) for field in fields)))\n\nclass PaymentInfo(GenericResult):\n    _bindings = ('debtornum', 'payment_date', 'ref_code', 'payment_amount', 'payment_status', 'payment_detail', 'location')\n    _type = \"Custom\"\n\nclass BillInfo(GenericResult):\n    _bindings = ('debtornum', 'stmtnum', 'bill_date', 'due_date', 'bill_amount', 'total_amt_due', 'amount_paid', 'amount_unpaid', 'status')\n    _type = \"Custom\"\n\nclass AccountInfo(GenericResult):\n    _bindings = ('debtornum', 'premnum', 'current_plan', 'prev_balance', 'prev_payments', 'current_charges', 'meter_cycle_day', 'energy_type')\n    _type = \"Custom\"\n\nclass OfferInfo(GenericResult):\n    _bindings = ('premises', 'offer', 'start_date', 'end_date', 'price')\n    _type = \"Custom\"\n\nclass AddressInfo(GenericResult):\n    _bindings = ('flatNumber', 'houseNumber', 'postalZone', 'streetDescription', 'townDescription')\n    _type = \"Peace\"\n",
+			"file": "ninetypercent/details/classes.py",
+			"file_size": 2150,
+			"file_write_time": 130526086374520015,
+			"settings":
+			{
+				"buffer_size": 2096,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ninetypercent/details/peace_webservices.py",
+			"settings":
+			{
+				"buffer_size": 1997,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ninetypercent/details/models.py",
+			"settings":
+			{
+				"buffer_size": 9423,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "(Premise){\n   access = None\n   address = None\n   alarmNotes = None\n   altitude = 0.0\n   branch = None\n   changeDate = None\n   changeUser = None\n   company = None\n   connectionDate = 2012-08-23 00:00:00-04:00\n   county = \"TX201\"\n   cutoffDate = None\n   delBarcode = None\n   depotCode = \"0\"\n   desc = None\n   distSubstation = \"0000\"\n   division = None\n   divisionCode = \"EAT\"\n   divisionDesc = None\n   externalReferences = \n      (ArrayOfPeace8ExternalReference){\n         Peace8ExternalReference[] = \n            (Peace8ExternalReference){\n               effectiveFrom = 2002-01-24 00:00:00-05:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"CNP\"\n               participantRole = \"ACTX\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"CNP\"\n               participantRole = \"ACTX\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = \"AMSR\"\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"AMS\"\n               participantRole = \"AMS\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-04-10 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"ERCOT\"\n               participantRole = \"CH\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"ERCOT\"\n               participantRole = \"CH\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-01-24 00:00:00-05:00\n               effectiveTo = 2011-04-05 00:00:00-04:00\n               externalSdpCode = \"2002-01-16\"\n               lastChangeDate = 2002-01-24 00:00:00-05:00\n               lastChangedBy = \"system\"\n               participantCode = \"SIGN\"\n               participantRole = \"CUST\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2011-04-06 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = \"2011-04-05\"\n               lastChangeDate = 2011-04-06 00:00:00-04:00\n               lastChangedBy = \"acq\"\n               participantCode = \"SIGN\"\n               participantRole = \"CUST\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = \"2012-08-23\"\n               lastChangeDate = 2012-08-23 00:00:00-04:00\n               lastChangedBy = \"acq\"\n               participantCode = \"SIGN\"\n               participantRole = \"CUST\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-01-24 00:00:00-05:00\n               effectiveTo = 2011-04-05 00:00:00-04:00\n               externalSdpCode = \"135445\"\n               lastChangeDate = 2002-01-24 00:00:00-05:00\n               lastChangedBy = \"system\"\n               participantCode = \"AGENT\"\n               participantRole = \"DEP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2011-04-06 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = \"00340102\"\n               lastChangeDate = 2011-04-06 00:00:00-04:00\n               lastChangedBy = \"acq\"\n               participantCode = \"AGENT\"\n               participantRole = \"DEP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = \"00340102\"\n               lastChangeDate = 2012-08-23 00:00:00-04:00\n               lastChangedBy = \"acq\"\n               participantCode = \"AGENT\"\n               participantRole = \"DEP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-04-10 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = \"1008901009190677309100\"\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"PERM\"\n               participantRole = \"ESID\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = \"1008901009190677309100\"\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"PERM\"\n               participantRole = \"ESID\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-04-09 00:00:00-04:00\n               effectiveTo = 2011-04-05 00:00:00-04:00\n               externalSdpCode = \"TXRL01\"\n               lastChangeDate = 2008-07-12 00:00:00-04:00\n               lastChangedBy = \"conversion\"\n               participantCode = \"RES\"\n               participantRole = \"OFFR\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2011-04-06 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = \"VCNP0104\"\n               lastChangeDate = 2011-04-06 00:00:00-04:00\n               lastChangedBy = \"TPCCONV\"\n               participantCode = \"RES\"\n               participantRole = \"OFFR\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = 2013-03-07 00:00:00-05:00\n               externalSdpCode = \"FCNP2120\"\n               lastChangeDate = 2012-08-23 00:00:00-04:00\n               lastChangedBy = \"acq\"\n               participantCode = \"RES\"\n               participantRole = \"OFFR\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2013-11-03 00:00:00-04:00\n               effectiveTo = 2013-12-02 00:00:00-05:00\n               externalSdpCode = \"VCNP2088\"\n               lastChangeDate = 2013-12-07 00:00:00-05:00\n               lastChangedBy = \"rateInc\"\n               participantCode = \"RES\"\n               participantRole = \"OFFR\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2013-12-03 00:00:00-05:00\n               effectiveTo = 2111-12-31 00:00:00-05:00\n               externalSdpCode = \"VCNP2103\"\n               lastChangeDate = 2013-12-07 00:00:00-05:00\n               lastChangedBy = \"rateInc\"\n               participantCode = \"RES\"\n               participantRole = \"OFFR\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-04-10 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"DE\"\n               participantRole = \"REP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"DE\"\n               participantRole = \"REP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2002-04-10 00:00:00-04:00\n               effectiveTo = 2012-09-06 00:00:00-04:00\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"CNP\"\n               participantRole = \"TDSP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n            (Peace8ExternalReference){\n               effectiveFrom = 2012-09-07 00:00:00-04:00\n               effectiveTo = None\n               externalSdpCode = None\n               lastChangeDate = 2012-09-01 00:00:00-04:00\n               lastChangedBy = \"energypw\"\n               participantCode = \"CNP\"\n               participantRole = \"TDSP\"\n               partyUtil = \"E\"\n               sdpCode = 4804\n            },\n      }\n   facilityRef = None\n   flatNumber = \"1109\"\n   hasAlarm = \"N\"\n   houseNumber = \"8300\"\n   jrNum = \"9304\"\n   keyNum = None\n   keyStatus = None\n   lifeSupport = \"N\"\n   lotNumber = None\n   mainNumber = None\n   marketModels = \n      (ArrayOfMarketModel){\n         MarketModel[] = \n            (MarketModel){\n               endDate = None\n               marketNum = 1\n               modelCode = \"RCBR\"\n               startDate = 2012-09-07 00:00:00-04:00\n            },\n      }\n   meshBlock = None\n   meterLocation = None\n   networkCode = \"ZY\"\n   notes = \n      (ArrayOfGeneralNote){\n         GeneralNote[] = \n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 11/16/2002 12:00:00By: energyop                     Last Status Update: 12/19/2002 09:33:00By: ilas             \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 11/16/2002 12:00:00By: energyop                     Last Status Update: 12/19/2002 09:33:00By: ilas             \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 09/23/2002 12:00:00By: energyop                     Last Status Update: 10/23/2002 11:29:00By: cleon            CREDIT EVENT DELETED                                        \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 09/23/2002 12:00:00By: energyop                     Last Status Update: 10/23/2002 11:29:00By: cleon            CREDIT EVENT DELETED                                        \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"FW / FINAL / RO :  :                                        Status: L  : FINAL / Logged                                 Logged: 09/06/2002 09:56:00By: rfawkes                      Last Status Update: 09/06/2002 09:56:00By: rfawkes          \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"FW / FINAL / RO :  :                                        Status: L  : FINAL / Logged                                 Logged: 09/06/2002 09:56:00By: rfawkes                      Last Status Update: 09/06/2002 09:56:00By: rfawkes          \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"EU / INVCE / RJ : 810 TDSP Invoice : Rejected Inbound 810   Status: C  : INVCE / Completed                              Logged: 07/23/2002 02:17:00By: rfawkes                      Last Status Update: 07/23/2002 02:33:00By: rfawkes          SUM                                                         Charge differs from quantity times rate by more than $0.005 \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"EU / INVCE / RJ : 810 TDSP Invoice : Rejected Inbound 810   Status: C  : INVCE / Completed                              Logged: 07/23/2002 02:17:00By: rfawkes                      Last Status Update: 07/23/2002 02:33:00By: rfawkes          SUM                                                         Charge differs from quantity times rate by more than $0.005 \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"FW / FINAL / RO :  :                                        Status: L  : FINAL / Logged                                 Logged: 09/06/2002 09:56:00By: rfawkes                      Last Status Update: 09/06/2002 09:56:00By: rfawkes          \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"conversion\"\n               createdBy = \"SYSTEM    \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"EU / INVCE / RJ : 810 TDSP Invoice : Rejected Inbound 810   Status: C  : INVCE / Completed                              Logged: 07/23/2002 02:17:00By: rfawkes                      Last Status Update: 07/23/2002 02:33:00By: rfawkes          SUM                                                         Charge differs from quantity times rate by more than $0.005 \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"ilas\"\n               createdBy = \"ilas      \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 11/16/2002 12:00:00By: energyop                     Last Status Update: 12/19/2002 09:33:00By: ilas             \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n            (GeneralNote){\n               boardID = \"RETIREDPTJ\"\n               changeDate = None\n               changedBy = \"mdouglas\"\n               createdBy = \"mdouglas  \"\n               dateEffective = None\n               externalCode = None\n               noteNo = None\n               notes = \"DR / POLR  / ON : Drop :                                    Status: X  : POLR  / Cancelled                              Logged: 09/23/2002 12:00:00By: energyop                     Last Status Update: 10/23/2002 11:29:00By: cleon            CREDIT EVENT DELETED                                        \"\n               preDefinedId = None\n               typeDescr = \"Conversion of Retired PTJs\"\n            },\n      }\n   numComlights = 0\n   occupied = None\n   oldPremnum = \"Z5791\"\n   ownerType = \"O\"\n   pmDpNo = None\n   postDirection = None\n   postalZone = \"77071-2945\"\n   preDirection = None\n   premiseNumber = \"5791\"\n   premiseTitle = None\n   premiseTypeCode = None\n   readersFlag = None\n   reticStatus = \"0\"\n   roundNum = 278\n   ruralFireNo = None\n   safetySwitch = None\n   saleTerritory = None\n   secRoundNum = -1\n   secSequenceNum = -1\n   sequenceNum = 1887\n   statusR = \"C\"\n   streetCode = 6085692\n   streetDescription = \"W AIRPORT BLVD                \"\n   suburb = None\n   supplyCharge = None\n   totComlights = \"0\"\n   townCode = \"929\"\n   townDescription = \"HOUSTON             \"\n   workday = None\n }\n[Finished in 8.7s]",
+			"settings":
+			{
+				"buffer_size": 19843,
+				"line_ending": "Windows",
+				"name": "(Premise){"
+			}
+		},
+		{
+			"file": "ninetypercent/details/views.py",
+			"settings":
+			{
+				"buffer_size": 764,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -352,19 +413,27 @@
 	},
 	"file_history":
 	[
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/requirements.txt",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/utilities.py",
+		"/C/Users/tsimmons2/Desktop/lopez2.sql",
+		"/C/Users/tsimmons2/Documents/workspace/branches/MembershipBuyin/sql/Pkg_Membership_Buyin - Copy.bdy",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/classes.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/peace_webservices.py",
+		"/C/Users/tsimmons2/Desktop/test.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/wsgi.py",
+		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/settings.py",
+		"/C/Users/tsimmons2/Dropbox/ffxiv_crafting.txt",
+		"/C/Users/tsimmons2/Documents/workspace/branches/TOAF_Missing/sql/query.sql",
+		"/C/Users/tsimmons2/Desktop/requirements.txt",
 		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/crawl_manual.txt",
 		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/DCSS Guide.txt",
 		"/C/Users/tsimmons2/Dropbox/Documents/Crawl/quickstart.txt",
 		"/C/Users/tsimmons2/Documents/Programs/stone_soup-0.13/README.txt",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/models.py",
-		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/settings.py",
 		"/C/Users/tsimmons2/Documents/workspace/branches/DEPETXDNPP/perl/DNP_process.pl",
 		"/C/Users/tsimmons2/Downloads/OBILogQA.txt",
-		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/utilities.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/details.html",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/base.html",
-		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/classes.py",
-		"/C/Users/tsimmons2/Desktop/test.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/views.py",
 		"/C/Users/tsimmons2/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/L1RT2K5P/mod_wsgi_make_error.txt",
 		"/C/Users/tsimmons2/Desktop/example_2.txt",
@@ -377,7 +446,6 @@
 		"/C/Users/tsimmons2/Documents/workspace/branches/datazaps/sql/TPC_CleanupDupMeter.sql",
 		"/C/Users/tsimmons2/Desktop/membership_pricing_updates.sql",
 		"/C/Python27/Lib/site-packages/suds/sudsobject.py",
-		"/C/Users/tsimmons2/Desktop/lopez2.sql",
 		"/C/Users/tsimmons2/Dropbox/Work/sac04_running.txt",
 		"/C/Users/tsimmons2/Desktop/check_sac04.py",
 		"/C/Users/tsimmons2/Dropbox/Work/sac04_results.csv",
@@ -405,12 +473,10 @@
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/ptj.html",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/invoice.html",
 		"/C/Users/tsimmons2/Documents/workspace/branches/TOAF_Missing/shell/get_missing_toaf.sh",
-		"/C/Users/tsimmons2/Documents/workspace/branches/TOAF_Missing/sql/query.sql",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/static/details/css/bootstrap.css",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/templates/premises.html",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/urls.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/urls.py",
-		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/ninetypercent/wsgi.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/manage.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/admin.py",
 		"/C/Users/tsimmons2/Dropbox/Code/90 Percent/ninetypercent/details/tests.py",
@@ -474,12 +540,7 @@
 		"/U/jmeter/jakarta-jmeter_8.08/bin/jmeter.bat",
 		"/C/Users/tsimmons2/Downloads/openrecovery-twrp-2.6.3.3-g2att/tmp/loki.sh",
 		"/C/Users/tsimmons2/Desktop/perftest.txt",
-		"/C/Users/tsimmons2/Documents/Projects/Misc/add_postal_zones.sql",
-		"/C/Users/tsimmons2/Desktop/update_postal_zone.sql",
-		"/C/Oracle/product/11.2.0/client_1/network/admin/tnsnames.ora",
-		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/models.py",
-		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/utilities.py",
-		"/C/Users/tsimmons2/Documents/Projects/90 Percent/ninetypercent/details/views.py"
+		"/C/Users/tsimmons2/Documents/Projects/Misc/add_postal_zones.sql"
 	],
 	"find":
 	{
@@ -497,6 +558,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" ",
+			"call",
+			"Call",
+			"call",
 			"WARN",
 			"twelve_calendar_days",
 			"12",
@@ -620,11 +685,7 @@
 			"INVDETID",
 			"invdetid",
 			"outdict",
-			"row_query",
-			"tc",
-			"reserved",
-			"create",
-			"reserved"
+			"row_query"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -672,8 +733,8 @@
 						"selection":
 						[
 							[
-								325,
-								325
+								371,
+								371
 							]
 						],
 						"settings":
@@ -774,6 +835,615 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								109
+							]
+						],
+						"settings":
+						{
+							"auto_name": "680240280",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ninetypercent/details/classes.py",
+					"settings":
+					{
+						"buffer_size": 2096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2095,
+								2095
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ninetypercent/details/peace_webservices.py",
+					"settings":
+					{
+						"buffer_size": 1997,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1056,
+								1056
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ninetypercent/details/models.py",
+					"settings":
+					{
+						"buffer_size": 9423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1603,
+								1603
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"settings":
+					{
+						"buffer_size": 19843,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19717,
+								19717
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"auto_name": "(Premise){",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3150.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ninetypercent/details/views.py",
+					"settings":
+					{
+						"buffer_size": 764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								736,
+								736
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -824,16 +1494,32 @@
 		"selected_items":
 		[
 			[
-				"set",
-				"ninetypercent/ninetypercent/settings.py"
+				"views",
+				"ninetypercent/details/views.py"
+			],
+			[
+				"clas",
+				"ninetypercent/details/classes.py"
 			],
 			[
 				"model",
 				"ninetypercent/details/models.py"
 			],
 			[
-				"views",
-				"ninetypercent/details/views.py"
+				"pe",
+				"ninetypercent/details/peace_webservices.py"
+			],
+			[
+				"util",
+				"ninetypercent/details/utilities.py"
+			],
+			[
+				"wsgi",
+				"ninetypercent/ninetypercent/wsgi.py"
+			],
+			[
+				"set",
+				"ninetypercent/ninetypercent/settings.py"
 			],
 			[
 				"settings",
@@ -846,10 +1532,6 @@
 			[
 				"detail",
 				"ninetypercent/details/templates/details.html"
-			],
-			[
-				"util",
-				"ninetypercent/details/utilities.py"
 			],
 			[
 				"prem",
