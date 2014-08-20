@@ -1,36 +1,54 @@
 {% load staticfiles %}
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src='{% static "details/js/jquery-1.11.1.min.js" %}'></script>
-    <script type="text/javascript" src='{% static "details/js/bootstrap.min.js" %}'></script>
-    <link rel="stylesheet" href='{% static "details/css/bootstrap.css" %}'>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" type="text/css" href='{% static "details/style/css.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "details/style/direct-common.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "details/style/direct-body.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "details/style/direct-headfoot.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "details/style/animations.css" %}'>
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "details/images/favicon.ico" %}'>
+    <link rel="stylesheet" href='{% static "details/style/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "details/style/style.css" %}'>
+    <link rel="stylesheet" href='{% static "details/style/header1.css" %}'>
+    <link rel="stylesheet" href='{% static "details/style/responsive.css" %}'>
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "details/images/favicon.ico" %}'>
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href='{% static "details/style/font-awesome.css" %}'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href='{% static "details/style/font-awesome-ie7.min.css" %}'>
+    <![endif]-->
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href='{% static "details/style/orange.css" %}' id="style_color">
+    <link rel="stylesheet" href='{% static "details/style/header1-orange.css" %}' id="style_color-header-1">
 
-    {% block extrajs %}
-    {% endblock %}
+    <script type="text/javascript" src='{% static "details/js/jquery-1.10.2.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "details/js/bootstrap.min.js" %}'></script>
+    {% block extra_js %} {% endblock %}
 </head>
 
-<body>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
+<body id="texas" class="en">
+    <nav class="navbar mainNav" role="navigation">
+        <div class="container-fluid" id="headContainer">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">90% Screen Demo</a>
+                <a class="navbar-brand logo" href="/">
+                    <h2 style="margin-top: 0 !important;">Direct Energy</h2>
+                </a>
             </div>
             <div class="collapse navbar-collapse">
-                 <form class="navbar-form navbar-left" role="search" action="/search/" method="post">
+                <form class="navbar-form navbar-left" role="search" action="/search/" method="post" style="padding-top: 8px !important;">
                     {% csrf_token %}
                     <div class="form-group">
                         <input type="text" class="form-control" name="debtornum" placeholder="Debtor Number">
                     </div>
-                     <button type="submit" class="btn btn-default">Search</button>
+                    <button type="submit" class="btn btn-default">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid">
-    {% block main %}
-    {% endblock %}
-    </div>
+    {% block main %} {% endblock %}
 </body>

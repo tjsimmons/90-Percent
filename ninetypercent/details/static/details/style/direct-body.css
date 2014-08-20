@@ -1,0 +1,501 @@
+.slide-show-links a {
+	background: url("../images/deSite/slideShowPips.png") no-repeat top;
+}
+.footerBottom {
+	background: url("../images/deSite/de-bolt-icon-long.png") repeat-x center 0px;
+}
+.tagLineInfoContainerInner {
+	background: url("../images/deSite/de-bolt-icon-long.png") repeat-x center 0px;
+}
+.tagLineInfoContainer {
+	background: url("../images/deSite/de-bolt-icon-long.png") repeat-x center 0px;
+}
+.tagLineInfoContainer li div {
+	background: url("../images/deSite/deMenuHoverTop.png") no-repeat 0px 0px;
+}
+.tagLineInfoContainer li {
+	background: url("../images/deSite/deBulletsBlue.png") no-repeat 0px 0px;
+}
+.sideSubNav li a {
+	background: url("../images/deSite/subMenuArrows10.png") no-repeat 0px 0px;
+}
+.meridianSideNav li a {
+	background: url("../images/deSite/subMenuArrows10.png") no-repeat 0px 0px;
+}
+input[type=text].requiredEmpty {
+	background-image: url("../images/deSite/exclamation.png"); background-repeat: no-repeat;
+}
+.select-drop-list li {
+	background: url("../images/deSite/ico-adobe16x.png") no-repeat 0px 0px;
+}
+.homeAux .actionBox .selectContainer {
+	background-image: url("../images/deSite/regionArrow.png");
+}
+#page_content_auxiliary {
+	width: 100%;
+}
+#footerContainer {
+	width: 100%;
+}
+#headContainer {
+	width: 100%;
+}
+.homeAux {
+	width: 980px;
+}
+#primary_content {
+	width: 980px;
+}
+#page_content_auxiliary_inner {
+	width: 980px;
+}
+#headContent {
+	width: 980px;
+}
+#page_content_secondary {
+	width: 980px;
+}
+#page_content_primary {
+	width: 980px;
+}
+.txPlanTop {
+	width: 980px;
+}
+.twothirds {
+	width: 645px;
+}
+.triShoutGroup div {
+	width: 315px;
+}
+.onethird {
+	width: 315px;
+}
+.half {
+	width: 480px;
+}
+.homeAux {
+	margin: 0px auto 75px; height: 365px;
+}
+.homeAux .bigButton em {
+	line-height: 28px;
+}
+.homeAux .bigButton {
+	line-height: 28px;
+}
+.homeAux .bigButton em {
+	padding-top: 2px;
+}
+.homeAux h1 {
+	font-weight: normal; margin-bottom: 10px;
+}
+.homeAux .full {
+	height: 365px;
+}
+.homeAux .twothirds {
+	height: 365px;
+}
+.homeAux .full {
+	width: 980px;
+}
+.homeAux .twothirds {
+	width: 700px;
+}
+.homeAux .full .buttonContainer {
+	left: 5px; bottom: 50px; position: absolute;
+}
+.homeAux .twothirds .buttonContainer {
+	left: 5px; bottom: 50px; position: absolute;
+}
+.homeAux .twothirds .buttonContainer {
+	width: 690px;
+}
+.homeAux .full .buttonContainer {
+	width: 950px;
+}
+.homeAux li {
+	line-height: 150%; margin-bottom: 5px;
+}
+.homeAux ul {
+	margin-bottom: 10px;
+}
+.homeShout {
+	padding: 10px; top: 5px; width: 260px; height: 290px; right: 0px; position: absolute;
+}
+.homeShout {
+	margin: 0px 0px 10px; display: block;
+}
+.homeVertShout {
+	margin: 0px 13px 0px 0px; display: block;
+}
+.subAux {
+	padding-bottom: 10px; margin-bottom: 15px;
+}
+.homeAux strong {
+	line-height: 150%; font-weight: normal; display: block;
+}
+.homeAux .bigButton {
+	margin-right: 10px;
+}
+.homeAux :last-child.bigButton {
+	margin-right: 0px;
+}
+.homeAux ul {
+	margin: 0px 0px 15px;
+}
+.homeAux .actionBox {
+	padding: 10px; width: auto; display: inline-block;
+}
+.homeAux .actionBox .selectContainer {
+	background-position: 350px 12px; padding: 5px; display: block; cursor: pointer; background-repeat: no-repeat;
+}
+.homeAux .actionBox .selectContainer em {
+	font-style: normal;
+}
+.homeAux .actionBox ul.stateList {
+	background: rgb(255, 255, 255); list-style: none; margin: 0px; padding: 10px; border: 1px solid rgb(204, 204, 204); left: 0px; top: 0px; width: 355px; height: 180px; overflow: auto; display: none; position: absolute;
+}
+.homeAux .actionBox:focus ul.stateList {
+	display: block;
+}
+.homeAux .actionBox:active ul.stateList {
+	display: block;
+}
+.homeAux .actionBox:hover ul.stateList {
+	display: block;
+}
+.homeAux .actionBox ul.stateList a {
+	text-decoration: none;
+}
+.homeAux .actionBox ul.stateList a:hover {
+	font-style: italic;
+}
+.homeAux .actionBox ul li {
+	margin: 0px; padding: 0px;
+}
+.homeAux .actionBox ul li ul {
+	list-style: none; margin: 0px 0px 0px 10px; padding: 0px 0px 0px 10px; border-left-color: rgb(204, 204, 204); border-left-width: 1px; border-left-style: solid; position: relative;
+}
+#page_content_auxiliary {
+	margin-bottom: 25px;
+}
+#primary_content {
+	margin: auto;
+}
+#page_content_auxiliary_inner {
+	margin: auto;
+}
+#page_content_secondary {
+	margin: auto;
+}
+#page_content_primary {
+	margin: auto;
+}
+#triShoutGroup {
+	overflow: auto; padding-bottom: 25px;
+}
+#triShoutGroup ul {
+	list-style: none; margin: 0px; padding: 0px; display: block;
+}
+#triShoutGroup li {
+	padding: 0px 10px 15px 0px; width: 312px; margin-right: 10px; border-right-width: 1px; border-right-style: solid; float: left;
+}
+#triShoutGroup p {
+	
+}
+#triShoutGroup ul li:last-child {
+	padding-right: 0px; margin-right: 0px; border-right-color: currentColor; border-right-width: medium; border-right-style: none;
+}
+#triShoutGroup h3 {
+	margin: 0px 0px 5px;
+}
+#triShoutGroup .blueButton {
+	
+}
+#triShoutGroup img {
+	margin: 0px 0px 0px 10px; float: right;
+}
+.slide-show {
+	padding: 0px; width: 650px; height: 325px; overflow: hidden; float: left;
+}
+.homeAux .slide-show {
+	left: 50%; top: 0px; margin-left: -490px; position: absolute;
+}
+.slide-show-stage {
+	z-index: 1;
+}
+.slide-show a.actionButton {
+	padding: 10px; width: 200px; text-transform: uppercase; text-decoration: none; display: block;
+}
+.slide-show h2 {
+	margin: 0px 0px 10px; padding: 5px 0px 0px; line-height: 100%; font-weight: normal;
+}
+.slide-show .heroshot {
+	top: 0px; right: 0px; position: absolute; z-index: 1;
+}
+.slide-show .slide {
+	margin: 0px; padding: 0px 220px 0px 0px; height: 325px;
+}
+.slide-show-links {
+	background: rgb(255, 255, 255); padding: 4px 0px 0px 8px; border-radius: 10px; top: 290px; height: 20px; right: 10px; position: absolute; box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+.slide-show-links td:first-child {
+	display: none;
+}
+.slide-show-links .slide-show-td2 {
+	width: auto;
+}
+.slide-show-links a {
+	margin: 0px 10px 0px 0px; width: 10px; height: 10px; text-indent: -100000px; overflow: hidden; float: left; display: block;
+}
+.slide-show-links .slide-show-td1 a:hover {
+	background-position: 0px -10px;
+}
+.slide-show-links .slide-show-td3 a {
+	background-position: 0px -20px;
+}
+.slide-show-links .slide-show-td3 a:hover {
+	background-position: 0px -30px;
+}
+.slide-show-links .slide-show-td2 a {
+	background-position: 0px -40px;
+}
+.slide-show-links .slide-show-td2 a.slide-show-link-hilighted {
+	background-position: 0px -50px;
+}
+.slide-show-links .slide-show-td2 a:hover {
+	background-position: 0px -60px;
+}
+#homeActionArea {
+	top: 0px; width: 310px; right: 50%; margin-right: -490px; position: absolute;
+}
+#homeActionArea a {
+	margin: 0px 0px 25px; width: 310px; height: 73px; text-decoration: none; float: left; display: block;
+}
+#homeActionArea .action1 {
+	
+}
+#homeActionArea .action2 {
+	
+}
+#homeActionArea .action3 {
+	margin-bottom: 0px;
+}
+#homeActionArea a em {
+	padding: 10px 0px 0px 10px; font-style: normal; display: block;
+}
+#homeActionArea a strong {
+	padding: 0px 0px 0px 10px; text-transform: uppercase; line-height: 100%; display: block;
+}
+.homeContent {
+	
+}
+.tagLineInfo {
+	height: 30px;
+}
+.tagLineInfoContainerInner {
+	height: 30px;
+}
+.tagLineInfoContainer {
+	height: 30px;
+}
+.tagLineInfoContainer {
+	background-position: 50% -30px; margin: 0px; padding: 30px 0px 0px; top: 340px; width: 100%; clear: both; position: absolute;
+}
+.tagLineInfoContainerInner {
+	background-position: 50% 30px; padding: 0px 0px 30px;
+}
+.tagLineInfo {
+	
+}
+.tagLineInfoContainer ul {
+	list-style: none; margin: 0px; padding: 0px; text-align: center; display: block;
+}
+.tagLineInfoContainer li {
+	margin: 0px 20px; padding: 0px 0px 0px 40px; display: inline-block; position: relative; cursor: pointer;
+}
+.tagLineInfoContainer li.tagLineInfoFriendly {
+	background-position: 0px -50px;
+}
+.tagLineInfoContainer li.tagLineInfoDirect {
+	background-position: 0px -100px;
+}
+.tagLineInfoContainer strong {
+	text-transform: uppercase; line-height: 32px; letter-spacing: 2px; font-weight: normal;
+}
+.tagLineInfoContainer li div {
+	padding: 10px 0px 0px; left: 50%; top: 30px; width: 145px; line-height: 120%; margin-left: -60px; display: none; position: absolute;
+}
+.tagLineInfoContainer li span {
+	border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentColor rgb(204, 204, 204) rgb(204, 204, 204); padding: 0px 10px 10px; display: block; position: relative; box-shadow: 3px 3px 4px rgba(0,0,0,0.5);
+}
+.tagLineInfoContainer li:hover div {
+	display: block; -moz-animation-name: bubbletiptop; -moz-animation-duration: .15s; -webkit-animation-name: bubbletiptop; -webkit-animation-duration: .15s;
+}
+.tagLineInfo {
+	
+}
+.sideSubNav {
+	padding: 10px;
+}
+.meridianSideNav {
+	padding: 10px;
+}
+.sideSubNav ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.meridianSideNav ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.sideSubNav li {
+	padding: 0px;
+}
+.meridianSideNav li {
+	padding: 0px;
+}
+.sideSubNav li a {
+	background-position: 4px -294px; padding: 4px 4px 4px 20px; line-height: 20px; display: block;
+}
+.meridianSideNav li a {
+	background-position: 4px -294px; padding: 4px 4px 4px 20px; line-height: 20px; display: block;
+}
+.sideSubNav li a:hover {
+	background-position: 4px -744px;
+}
+.meridianSideNav li a:hover {
+	background-position: 4px -744px;
+}
+.sideSubNav a {
+	text-decoration: none;
+}
+.meridianSideNav a {
+	text-decoration: none;
+}
+.breadcrumbNav {
+	padding: 10px 0px;
+}
+#leftCol {
+	float: left;
+}
+#rightCol {
+	float: left;
+}
+form#change-form {
+	padding: 10px;
+}
+form#change-form textarea {
+	border-width: 1px; border-style: solid; padding: 4px 5px; width: 285px;
+}
+form#change-form input[type=text] {
+	border-width: 1px; border-style: solid; padding: 4px 5px; width: 285px;
+}
+form#change-form select {
+	border-width: 1px; border-style: solid; padding: 4px 5px; width: 285px;
+}
+form#change-form div.emergencyMessage {
+	display: none;
+}
+form#change-form div.emailFormBody {
+	display: none;
+}
+form#change-form div.product {
+	display: none;
+}
+form#change-form div.active {
+	display: block;
+}
+form#change-form div.product span {
+	margin-right: 15px; display: inline-block;
+}
+form#change-form table {
+	border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+form#change-form table th {
+	padding: 5px 0px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+form#change-form table td {
+	padding: 5px 0px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+form#change-form table th {
+	text-align: left;
+}
+form#change-form table td {
+	text-align: left;
+}
+.sideSubNav form#change-form {
+	padding: 0px;
+}
+input[type=text].requiredEmpty {
+	background-position: 270px 3px;
+}
+.txPlanTop {
+	margin: auto;
+}
+table#gridviewpricinglist {
+	border-width: 1px; border-style: solid; width: 100%;
+}
+table#gridviewpricinglist th {
+	
+}
+table#gridviewpricinglist tr.PlanSummary td {
+	border-top-width: 1px; border-top-style: solid;
+}
+table#gridviewpricinglist tr.PlanSummary td td {
+	border: currentColor;
+}
+table#gridviewpricinglist .next-steptd div {
+	padding: 10px;
+}
+.next-steptd {
+	padding: 10px;
+}
+.plantd {
+	padding: 10px;
+}
+.plantd div.productIcon {
+	float: left;
+}
+.plan-head {
+	font-weight: bold; text-decoration: none;
+}
+.plantd a.cursorPoint {
+	font-weight: bold; text-decoration: none;
+}
+.td-select-drop {
+	margin: 0px 10px; padding: 15px 0px 0px; border-top-width: 1px; border-top-style: solid;
+}
+.select-drop-text {
+	float: left;
+}
+.select-drop-list {
+	float: left;
+}
+.select-drop-text {
+	width: 680px;
+}
+.select-drop-list {
+	padding: 10px; width: 250px;
+}
+.select-drop-list ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.select-drop-list li {
+	background-position: 0px 5px; margin: 0px; padding: 0px 0px 0px 20px;
+}
+#enrollitems1 {
+	display: none;
+}
+#enrollitems2 {
+	display: none;
+}
+.pressHead h1 {
+	font-weight: normal;
+}
+.pressHead h2 {
+	font-weight: normal;
+}
+.pressHead h3 {
+	font-weight: normal;
+}
+.aboutHead {
+	margin-top: -20px;
+}
