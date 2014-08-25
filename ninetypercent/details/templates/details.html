@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block main %}
-
     <div class="breadcrumbs margin-bottom-40">
         <div class="container">
-            <h1 class="pull-left">Customer Details</h1>
+            <h1 class="pull-left">Customer Summary</h1>
             <ul class="pull-right breadcrumb">
                 <li><b>User:</b>&nbsp;test</li>
             </ul>
@@ -16,11 +15,14 @@
     <div class="container">
     {% if debtor %}
         {% include "debtor.html" %}
-        {% for premise in premises %}
-            {% include "premise.html" %}
-        {% endfor %}
 
-        {% include "misc.html" %}
+        <div class="panel-group" id="accordion">
+            {% for premise in premises %}
+                {% include "premise.html" %}
+            {% endfor %}
+        </div>
+
+        {#{% include "misc.html" %}#}
     {% else %}
         <div class="row">
             <div class="col-lg-12"><h1>No data found.</h1></div>

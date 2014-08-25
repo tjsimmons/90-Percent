@@ -1,42 +1,80 @@
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#debtor_edit").click(function() {
-        $(".editable").each(function(index) {
-            var text = $(this).text();
-
-            $(this).html("<input type='text' class='form-control' value='" + text + "'>");
-        });
-
-
-        $("#debtor_cancel, #debtor_save").show();
-        $("#debtor_edit").hide();
-    });
-
-    $("#debtor_cancel, #debtor_save").click(function() {
-        $(".editable").each(function(index) {
-            var value = $(this).children("input").val();
-
-            $(this).html("");
-            $(this).text(value);
-        });
-
-        $("#debtor_edit").show();
-        $("#debtor_cancel, #debtor_save").hide();
-    });
-});
-</script>
+{# status icons #}
+<div class="row debtor-alerts text-center">
+    <div class="col-sm-2">
+        {% if debtor.critical_care %}
+            <p class="btn-primary img-rounded">Critical Care</p>
+        {% endif %}
+    </div>
+    <div class="col-sm-2">
+        {% if debtor.past_due %}
+            <p class="btn-success img-rounded">Past Due/DNP</p>
+        {% endif %}
+    </div>
+    <div class="col-sm-2">
+        {% if debtor.specialty_plan %}
+            <p class="btn-info img-rounded">Specialty Plan</p>
+        {% endif %}
+    </div>
+    <div class="col-sm-2">
+        {% if debtor.expiring_plan %}
+            <p class="btn-warning img-rounded">Expiring/Expired Plan</p>
+        {% endif %}
+    </div>
+    <div class="col-sm-2">
+        {% if debtor.open_complaint %}
+            <p class="btn-danger img-rounded">Open Complaint</p>
+        {% endif %}
+    </div>
+    <div class="col-sm-2">
+        {% if debtor.lida %}
+            <p class="btn-success img-rounded">LIDA</p>
+        {% endif %}
+    </div>
+</div>
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-default">
+        <div class="panel panel-default" foo="man">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="icon-tasks"></i>Debtor Details
-                    <p class="pull-right">
-                        <button type="button" id="debtor_cancel" style="display: none;">Cancel</button>
-                        <button type="button" id="debtor_save" style="display: none;">Save</button>
-                        <button type="button" id="debtor_edit" style="margin-top: -15px !important;">Edit</button>
-                    </p>
-                </h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3 class="panel-title"><i class="icon-tasks"></i>&nbsp;Debtor Details - {{ debtor.company_code }}</h3>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="btn-group">
+                                <button type="button" class="btn-override dropdown-toggle" data-toggle="dropdown">Actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Add E-Bill</a>
+                                    </li>
+                                    <li><a href="#">Add Payment Extension</a>
+                                    </li>
+                                    <li><a href="#">Add Pick Your Own Due Date</a>
+                                    </li>
+                                    <li><a href="#">Initiate Reconnect</a>
+                                    </li>
+                                    <li><a href="#">Add Billing Inquiry</a>
+                                    </li>
+                                    <li><a href="#">Add Note</a>
+                                    </li>
+                                    {% comment %}
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a>
+                                    </li>{% endcomment %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="pull-right">
+                                <button type="button" class="save btn-override">Save</button>
+                                <button type="button" class="cancel btn-override">Cancel</button>
+                                <button type="button" class="edit btn-override">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="panel-body">
@@ -66,11 +104,7 @@ $(document).ready(function() {
                     <div class="col-sm-3">
                         <label>Billing Address:</label>
                     </div>
-                    <div class="col-sm-3">{{ debtor.billing_address.address_line1 }},&nbsp;{{ debtor.billing_address.address_line3 }}&nbsp;{{ debtor.billing_address.postal }}</div>
-                    <div class="col-sm-3">
-                        <label>Email Address:</label>
-                    </div>
-                    <div class="col-sm-3 editable">{{ debtor.email_address.strip }}</div>
+                    <div class="col-sm-9">{{ debtor.billing_address.address_line1 }},&nbsp;{{ debtor.billing_address.address_line3 }}&nbsp;{{ debtor.billing_address.postal }}</div>
                 </div>
 
                 <div class="row">
@@ -78,8 +112,10 @@ $(document).ready(function() {
                         <label>Phone #:</label>
                     </div>
                     <div class="col-sm-3 editable">{{ debtor.phone_number.strip }}</div>
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <label>Email Address:</label>
+                    </div>
+                    <div class="col-sm-3 editable">{{ debtor.email_address.strip }}</div>
                 </div>
 
                 <div class="row">

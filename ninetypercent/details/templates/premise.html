@@ -1,91 +1,68 @@
-<form class="form-horizontal" role="form">
-    <fieldset class="col-sm-12">
-        <legend>Premise {{ forloop.counter }} Details</legend> {# this is only included in a for loop, so we can use the counter #}
-        <div class="form-group">
-            <label class="col-sm-1 control-label">Premnum</label>
-            <div class="col-sm-1">
-                <p class="form-control-static">{{ premise.premnum }}</p>
-            </div>
-            <label class="col-sm-1 control-label">Status</label>
-            <div class="col-sm-1">
-                <p class="form-control-static">{{ premise.status }}</p>
-            </div>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}">
+            <h3 class="panel-title"><i class="icon-tasks"></i>&nbsp;Premise #{{ forloop.counter }} - {{ premise.premnum }} {% comment %}
+                <p class="pull-right">
+                    <button type="button" class="save" style="display: none; margin-top: -15px !important;">Save</button>
+                    <button type="button" class="cancel" style="display: none; margin-top: -15px !important;">Cancel</button>
+                    <button type="button" class="edit" style="margin-top: -15px !important;">Edit</button>
+                </p>{% endcomment %}
+            </h3>
+        </a>
+    </div>
 
-        <div class="form-group">
-            <label class="col-sm-1 control-label">Start Date</label>
-            <div class="col-sm-1">
-                <p class="form-control-static">{{ premise.start_date }}</p>
+    <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse {% if forloop.counter == 1 %}in{% endif %}">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Address:</label>
+                </div>
+                <div class="col-sm-9">{{ premise.address.street_number }}&nbsp;{{ premise.address.street_name.strip }}&comma;&nbsp;{{ premise.address.city.strip }}&comma;&nbsp;{{ premise.address.state.strip }}&nbsp;{{ premise.address.postal.strip }}</div>
             </div>
-            <label class="col-sm-1 control-label">End Date</label>
-            <div class="col-sm-1">
-                <p class="form-control-static">{{ premise.end_date|default_if_none:"" }}</p>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Status:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.status }}</div>
+                <div class="col-sm-3">
+                    <label>ESIID:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.esiid|default_if_none:"" }}</div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="col-sm-1 control-label">Address Details</label>
-
-            <div class="col-sm-6">
-                <table class="table table-striped">
-                    <tr>
-                        <th>House #</th>
-                        <th>Street</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip</th>
-                    </tr>
-                    <tr>
-                        <td>{{ premise.address.street_number }}</td>
-                        <td>{{ premise.address.street_name.strip }}</td>
-                        <td>{{ premise.address.city.strip }}</td>
-                        <td>{{ premise.address.state.strip }}</td>
-                        <td>{{ premise.address.postal.strip }}</td>
-                    </tr>
-                </table>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Service Start Date:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.start_date }}</div>
+                <div class="col-sm-3">
+                    <label>Service End Date:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.end_date|default_if_none:"" }}</div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="col-sm-1 control-label">Rate Details</label>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Current Offer:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.rate.offer }}</div>
+                <div class="col-sm-3">
+                    <label>Price Point:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.rate.rate }}</div>
+            </div>
 
-            <div class="col-sm-4">
-                <table class="table table-striped">
-                    <tr>
-                        <th>Offer Code</th>
-                        <th>Rate</th>
-                        <th>Effective From</th>
-                        <th>Effective To</th>
-                    </tr>
-                    <tr>
-                        <td>{{ premise.rate.offer }}</td>
-                        <td>{{ premise.rate.rate }}</td>
-                        <td>{{ premise.rate.effective_from }}</td>
-                        <td>{{ premise.rate.effective_to|default_if_none:"" }}</td>
-                    </tr>
-                </table>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Latest Reading:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.reading.reading }}</div>
+                <div class="col-sm-3">
+                    <label>Read Date:</label>
+                </div>
+                <div class="col-sm-3">{{ premise.reading.read_date }}</div>
             </div>
         </div>
-
-        <div class="form-group">
-            <label class="col-sm-1 control-label">Reading Details</label>
-
-            <div class="col-sm-4">
-                <table class="table table-striped">
-                    <tr>
-                        <th>Reading</th>
-                        <th>Read Date</th>
-                        <th>Read Method</th>
-                        <th>Invoice #</th>
-                    </tr>
-                    <tr>
-                        <td>{{ premise.reading.reading }}</td>
-                        <td>{{ premise.reading.read_date }}</td>
-                        <td>{{ premise.reading.read_method }}</td>
-                        <td>{{ premise.reading.invoice_num }}</td>
-                    </tr>
-                </table>
-
-            </div>
-    </fieldset>
-</form>
+    </div>
+</div>

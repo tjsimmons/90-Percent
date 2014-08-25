@@ -8,6 +8,10 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+ /* copied from Bootstrap 3.2 */
+ .bg-primary{color:#fff;background-color:#428bca}a.bg-primary:hover{background-color:#3071a9}.bg-success{background-color:#dff0d8}a.bg-success:hover{background-color:#c1e2b3}.bg-info{background-color:#d9edf7}a.bg-info:hover{background-color:#afd9ee}.bg-warning{background-color:#fcf8e3}a.bg-warning:hover{background-color:#f7ecb5}.bg-danger{background-color:#f2dede}a.bg-danger:hover{background-color:#e4b9b9}
+ .center-block{display:block;margin-right:auto;margin-left:auto}
+/* */
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
 audio,canvas,video{display:inline-block;}
@@ -1049,7 +1053,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 
 .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
 .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
- 
+
 table.dataTable thead th:active,
 table.dataTable thead td:active {
 	outline: none;

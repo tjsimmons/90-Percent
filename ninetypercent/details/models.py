@@ -46,6 +46,16 @@ class Debtor(Common):
     overdue_balance = models.DecimalField(max_digits=10, decimal_places=4, null=True)
     statement_due = models.DateField(null=True)
     statement_amount = models.DecimalField(max_digits=10, decimal_places=4, null=True)
+    # stuff for the alerts
+    critical_care = models.BooleanField(default=False)
+    past_due = models.BooleanField(default=False)
+    specialty_plan = models.BooleanField(default=False)
+    expiring_plan = models.BooleanField(default=False)
+    open_complaint = models.BooleanField(default=False)
+    lida = models.BooleanField(default=False)
+
+    # a field just in case the page dies or something, we want to fully retrieve all details
+    retrieved = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return "/details/%s/" % self.debtornum
@@ -59,9 +69,9 @@ class Premise(Common):
     status = models.CharField(max_length=1, null=True)
     address = models.ForeignKey(Address, null=True)
     reading = models.ForeignKey("Reading", null=True)
+    rate = models.ForeignKey("Rate", null=True)
 
 class Rate(Common):
-    premise = models.ForeignKey(Premise)
     offer = models.CharField(max_length=30)
     rate = models.DecimalField(max_digits=5, decimal_places=4, null=True)
     effective_from = models.DateField(null=True)
@@ -93,7 +103,7 @@ class Payment(Common):
     channel = models.CharField(max_length=20)
 
 class Reading(Common):
-  reading = models.IntegerField()
-  read_date = models.DateField()
-  read_method = models.CharField(max_length=1)
-  invoice_num = models.IntegerField()
+    reading = models.IntegerField()
+    read_date = models.DateField()
+    read_method = models.CharField(max_length=1)
+    invoice_num = models.IntegerField(null=True)

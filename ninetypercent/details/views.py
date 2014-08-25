@@ -6,7 +6,8 @@ from peace_webservices import call_soap
 
 def details(request, debtornum):
     debtor = Debtor.objects.get(debtornum=debtornum)
-    premises = Premise.objects.filter(debtor=debtor).order_by("-start_date")
+    #premises = Premise.objects.filter(debtor=debtor).order_by("-start_date")
+    premises = Premise.objects.filter(debtor=debtor).order_by("status")
 
     return render(request, 'details.html', {"debtor": debtor, "premises": premises})
 

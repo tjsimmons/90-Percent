@@ -8,36 +8,23 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'BillingAddress'
-        db.create_table(u'details_billingaddress', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('last_modified', self.gf('django.db.models.fields.DateTimeField')(default=datetime.datetime(2014, 8, 20, 0, 0))),
-            ('address_line1', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('address_line2', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('address_line3', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('address_name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('postal', self.gf('django.db.models.fields.CharField')(max_length=10)),
-        ))
-        db.send_create_signal(u'details', ['BillingAddress'])
+        # Adding field 'Debtor.retrieved'
+        db.add_column(u'details_debtor', 'retrieved',
+                      self.gf('django.db.models.fields.BooleanField')(default=False),
+                      keep_default=False)
 
-
-        # Changing field 'Debtor.billing_address'
-        db.alter_column(u'details_debtor', 'billing_address_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['details.BillingAddress'], null=True))
 
     def backwards(self, orm):
-        # Deleting model 'BillingAddress'
-        db.delete_table(u'details_billingaddress')
+        # Deleting field 'Debtor.retrieved'
+        db.delete_column(u'details_debtor', 'retrieved')
 
-
-        # Changing field 'Debtor.billing_address'
-        db.alter_column(u'details_debtor', 'billing_address_id', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['details.Address'], null=True))
 
     models = {
         u'details.address': {
             'Meta': {'object_name': 'Address'},
             'city': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'postal': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
             'state': ('django.db.models.fields.CharField', [], {'max_length': '2'}),
             'street_name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
@@ -50,7 +37,7 @@ class Migration(SchemaMigration):
             'address_line3': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'address_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'postal': ('django.db.models.fields.CharField', [], {'max_length': '10'})
         },
         u'details.debtor': {
@@ -58,15 +45,22 @@ class Migration(SchemaMigration):
             'aav': ('django.db.models.fields.CharField', [], {'max_length': '4', 'null': 'True'}),
             'billing_address': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.BillingAddress']", 'null': 'True'}),
             'company_code': ('django.db.models.fields.CharField', [], {'max_length': '4', 'null': 'True'}),
+            'critical_care': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'current_balance': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '10', 'decimal_places': '4'}),
             'debtornum': ('django.db.models.fields.IntegerField', [], {}),
             'email_address': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True'}),
+            'expiring_plan': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'firstname': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
+            'lida': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'on_ebill': ('django.db.models.fields.CharField', [], {'max_length': '1', 'null': 'True'}),
+            'open_complaint': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'overdue_balance': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '10', 'decimal_places': '4'}),
+            'past_due': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'phone_number': ('django.db.models.fields.CharField', [], {'max_length': '12', 'null': 'True'}),
+            'retrieved': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'specialty_plan': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'statement_amount': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '10', 'decimal_places': '4'}),
             'statement_due': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'surname': ('django.db.models.fields.CharField', [], {'max_length': '30', 'null': 'True'})
@@ -79,7 +73,7 @@ class Migration(SchemaMigration):
             'invoice_amt': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '10', 'decimal_places': '2'}),
             'invoice_date': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'invoice_num': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'})
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'})
         },
         u'details.payment': {
             'Meta': {'object_name': 'Payment'},
@@ -87,7 +81,7 @@ class Migration(SchemaMigration):
             'date_received': ('django.db.models.fields.DateField', [], {}),
             'debtor': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Debtor']", 'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'payment_amt': ('django.db.models.fields.DecimalField', [], {'max_digits': '10', 'decimal_places': '2'})
         },
         u'details.premise': {
@@ -97,8 +91,9 @@ class Migration(SchemaMigration):
             'end_date': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'esiid': ('django.db.models.fields.CharField', [], {'max_length': '24', 'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'premnum': ('django.db.models.fields.IntegerField', [], {}),
+            'rate': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Rate']", 'null': 'True'}),
             'reading': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Reading']", 'null': 'True'}),
             'start_date': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'status': ('django.db.models.fields.CharField', [], {'max_length': '1', 'null': 'True'})
@@ -110,7 +105,7 @@ class Migration(SchemaMigration):
             'date_status': ('django.db.models.fields.DateTimeField', [], {'null': 'True'}),
             'debtor': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Debtor']", 'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'premise': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Premise']", 'null': 'True'}),
             'ptj_number': ('django.db.models.fields.IntegerField', [], {}),
             'status_code': ('django.db.models.fields.CharField', [], {'max_length': '2', 'null': 'True'}),
@@ -122,16 +117,15 @@ class Migration(SchemaMigration):
             'effective_from': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             'effective_to': ('django.db.models.fields.DateField', [], {'null': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'offer': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
-            'premise': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['details.Premise']"}),
             'rate': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '5', 'decimal_places': '4'})
         },
         u'details.reading': {
             'Meta': {'object_name': 'Reading'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'invoice_num': ('django.db.models.fields.IntegerField', [], {}),
-            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 20, 0, 0)'}),
+            'invoice_num': ('django.db.models.fields.IntegerField', [], {'null': 'True'}),
+            'last_modified': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2014, 8, 22, 0, 0)'}),
             'read_date': ('django.db.models.fields.DateField', [], {}),
             'read_method': ('django.db.models.fields.CharField', [], {'max_length': '1'}),
             'reading': ('django.db.models.fields.IntegerField', [], {})

@@ -1,0 +1,22 @@
+.editable input {
+    height: 20px;
+    padding: 0 0 0 0;
+}
+
+.btn-override {
+    margin-top: -15px;
+}
+
+.cancel, .save {
+    display: none;
+}
+
+.debtor-alerts div {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.debtor-alerts p {
+    height: 100%;
+    padding-top: 15px;
+}
