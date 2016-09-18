@@ -23,10 +23,10 @@ So, the two paragraphs above work in conjunction to create nice, generic methods
 
 FINANCIAL_SERVICE = "FinancialService"
 CUSTOMER_DETAIL_SERVICE = "CustomerDetailService"
-PREMISE_SERVICE = "Peace8PremiseService"
+PREMISE_SERVICE = ""
 READING_SERVICE = "UtilityUsageService"
 CUSTOM_SERVICE = "CustomService"
-END_URL = "http://happed3.na.directenergy.corp:10127/services/{0}?wsdl"
+END_URL = ""
 
 def get_customer_details(debtornum):
     debtor, created = Debtor.objects.get_or_create(debtornum=debtornum)
@@ -195,7 +195,7 @@ def setup_soap(service, doctor=None):
     client = Client(END_URL.format(service), doctor=doctor)
 
     security = Security()
-    token = UsernameToken('oamuser', 'oam_tpc8')
+    token = UsernameToken('foo', 'bar')
     security.tokens.append(token)
 
     client.set_options(wsse=security)

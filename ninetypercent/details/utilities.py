@@ -4,7 +4,7 @@ from cx_Oracle import connect
 from models import Debtor, Premise, Rate, Address, Invoice, PTJ, Payment, Reading
 
 def get_database_connection():
-    db_connect = connect('energydb', 'energydb_tpc3', 'tdpctpc3')
+    db_connect = connect('foo', 'bar', 'baz')
     db_cursor = db_connect.cursor()
 
     return (db_connect, db_cursor)
